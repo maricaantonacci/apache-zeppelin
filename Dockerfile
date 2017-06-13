@@ -14,11 +14,11 @@ ENV MASTER="" \
     SPARK_HOME="/spark" \
     SPARK_SUBMIT_OPTIONS="" 
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /zeppelin/entrypoint.sh
 
-RUN chmod 755 /entrypoint.sh
+RUN chmod 755 /zeppelin/entrypoint.sh
 
 WORKDIR /zeppelin
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/zeppelin/entrypoint.sh"]
 CMD       [ "/zeppelin/bin/zeppelin.sh", "start" ]

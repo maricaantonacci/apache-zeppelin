@@ -19,6 +19,7 @@ fi
 
 cd ${SPARK_HOME}
 j2 core-site.xml.j2 > ${SPARK_HOME}/conf/core-site.xml
+j2 spark-defaults.conf.j2 > ${SPARK_HOME}/conf/spark-defaults.conf
 cd -
 
 if [ ! -z "$ADMIN_PASSWORD" ]; then
